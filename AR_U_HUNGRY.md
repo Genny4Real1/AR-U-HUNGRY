@@ -15,6 +15,11 @@ Inoltre, un assistente AI potrà rispondere a tutte le curiosità che l'utente p
 * *Nome dell'App*: **AR U HUNGRY?**
 * *Dispositivi*: Mobile AR, Web AR (?)
 * *Tecnologie Usate*: 
+  * Frameworks:
+    * WebXR (android)
+    * Scene Viewer (android)
+    * Quick Look (iOS)
+
 
 ## Customer 
 * **Ristoratore (Pagante)**  
