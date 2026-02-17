@@ -6,42 +6,21 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>AR U HUNGRY test</title>
-    <script type="module" src="/main.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            touch-action: none;
-        }
-        model-viewer {
-            width: 100vw;
-            height: 100vh;
-            background-color: transparent;
-            --poster-color: transparent;
-        }
-        model-viewer::part(default-ar-button) {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            padding: 12px 24px;
-        }
-    </style>
-    <model-viewer
-            src="./assets/margherita pizza 3d model.glb"
-            loading="eager"
-            reveal="auto"
-            shadow-intensity="1"
-            shadow-softness="0.5"
-            ar
-            ar-modes="webxr scene-viewer quick-look"
-            ar-placement="floor"
-            ar-scale="auto"
-            camera-controls
-            touch-action="pan-y"
-            interaction-prompt="none"
-            exposure="1"
-            environment-image="neutral">
-    </model-viewer>
-
+    <script type="module" src="https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
 </head>
+<body>
+<model-viewer
+        src="assets/margherita pizza 3d model.glb"
+        loading="eager"
+        reveal="auto"
+        shadow-intensity="1"
+        ar
+        camera-controls
+        touch-action="pan-y"
+        alt="3D model of a pizza"
+        style="background-color: unset;"
+        xr-environment
+        >
+</model-viewer>
+</body>
 </html>

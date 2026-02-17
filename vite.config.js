@@ -1,5 +1,6 @@
 import { defineConfig} from "vite";
 
 export default defineConfig({
-    base: "/AR-U-HUNGRY/",
+    base:
+        '/AR-U-HUNGRY/',
 });
