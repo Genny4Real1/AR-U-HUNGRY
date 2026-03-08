@@ -5,22 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>AR U HUNGRY test</title>
+    <title>AR U HUNGRY</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-view="ar-product">
 <model-viewer
-        src="assets/margherita pizza 3d model.glb"
-        loading="eager"
-        reveal="auto"
-        shadow-intensity="1"
-        ar
-        camera-controls
-        touch-action="pan-y"
-        alt="3D model of a pizza"
-        style="background-color: unset;"
-        xr-environment
-        >
-</model-viewer>
+    src="assets/resized_margherita_pizza.glb"
+    loading="eager"
+    reveal="auto"
+    shadow-intensity="1"
+    ar
+    camera-controls
+    touch-action="pan-y"
+    alt="3D model of a pizza"
+    style="background-color: unset;"
+    xr-environment
+></model-viewer>
+
+<!-- AR Product Overlay -->
+<div class="ar-overlay">
+    <div class="ar-top-bar">
+        <div class="ar-menu-container" id="ar-menu-container">
+            <button class="ar-menu-btn" id="menu-btn" aria-label="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="ar-action-buttons" id="menu-action-buttons">
+        <button class="ar-action-btn" id="ai-btn" aria-label="AI Assistant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+        </button>
+        <button class="ar-action-btn" id="add-cart-btn" aria-label="Add to cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+        <button class="ar-action-btn" id="add-fav-btn" aria-label="Add to favourites">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+            </div>
+        </div>
+        <button class="ar-back-btn" id="back-btn" aria-label="Go back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+    </div>
+</div>
+
+<!-- Cart Page -->
+<div class="cart-page">
+    <div class="pattern-bg"></div>
+    <div class="cart-content">
+        <header class="cart-header">
+            <h1 class="cart-title">Ordine</h1>
+            <div class="cart-tabs">
+                <button class="cart-tab active">Carrello</button>
+                <button class="cart-tab">In arrivo</button>
+                <button class="cart-tab">Storico</button>
+            </div>
+        </header>
+        <div class="cart-items" id="cart-items"></div>
+        <p class="cart-total" id="cart-total">Totale: €0.00</p>
+        <button class="cart-cta">Procedi al pagamento</button>
+    </div>
+</div>
+
+<!-- Favourites Page -->
+<div class="favourites-page">
+    <div class="pattern-bg"></div>
+    <div class="favourites-content">
+        <header class="favourites-header">
+            <h1 class="favourites-title">Preferiti</h1>
+        </header>
+        <div class="favourites-list" id="favourites-list"></div>
+    </div>
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+    <button class="bottom-nav-btn" id="nav-home" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </button>
+    <button class="bottom-nav-btn" id="nav-fav" aria-label="Preferiti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </button>
+    <button class="bottom-nav-btn central" id="nav-central" aria-label="Aggiungi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
+    <button class="bottom-nav-btn" id="nav-cart" aria-label="Carrello">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    </button>
+    <button class="bottom-nav-btn" id="nav-profile" aria-label="Profilo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+</nav>
+
+<!-- AI Chat Panel -->
+<div class="ai-chat-overlay" id="ai-chat-overlay">
+    <div class="ai-chat-panel">
+        <div class="ai-chat-panel-wrapper">
+            <button class="ai-chat-close" id="ai-chat-close" aria-label="Chiudi">&times;</button>
+            <div class="ai-chat-header">
+                <div class="ai-chat-header-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+                </div>
+                <h2 class="ai-chat-title">Come posso aiutarti?</h2>
+            </div>
+            <div class="ai-chat-body">
+                <div class="ai-chat-faqs" id="ai-chat-faqs"></div>
+                <div class="ai-chat-answer" id="ai-chat-answer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="./main.js"></script>
 </body>
 </html>

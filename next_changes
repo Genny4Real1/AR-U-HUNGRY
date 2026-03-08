@@ -1,0 +1,8 @@
+ Perfect. Now to add even more features. 
+- Still the add to favourites pop-up doesn't work.
+- The first attachment is a page where it's written "Seleziona il Ristorante" is the homepage, the page you should be able to access from the home button on the bottom left.  Implement that, and only create a pizzeria resturant with fictional info just to demo the product. 
+- The second screenshot is the resturant main page where you can see all the items that resturant is offering. If you see on the top-right there is a yellow chevron, that one leeds to an overlay as you can see from the third attachment, with info regarding the resturant such as the rating, the descriptions and some contact info.
+- The middle button, the + one, should bring to the camera section where you should be able to see the last selected product or nothing if there was no product. In this case just show the pizza as intended. 
+- I wanna make sure if I add something on the cart and on the favourite section, that it should be also removable, implement that. 
+- The ai part in the model viewer page should be just an overlay as I have shown in the previous prompt
+Happy coding! 

@@ -31,11 +31,12 @@ Inoltre, un assistente AI potrà rispondere a tutte le curiosità che l'utente p
 * **Cliente (Target)**   
 	* *Obiettivi*:
 	* *Frustrazioni*:
-	
-## Costi
 
-## Revenues
-	
+## User Flow
+**L'applicazione può essere usata fuori da un ristorante per visualizzare il menu di un ristorante**
+
+Utente entra, fa accesso all'applicazione. Avere un account permette di avere salvate le proprie preferenze e informazioni come restrizioni alla dieta, informazioni di pagamento etc...
+Dopo aver fatto l'accesso, seleziona il ristorante. Può farlo selezionandolo da una lista di ristoranti in cui questa applicazione è funzionante. 
 
 
 
