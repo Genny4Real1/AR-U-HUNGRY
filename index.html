@@ -7,8 +7,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>AR U HUNGRY</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
-  <script type="module" crossorigin src="/AR-U-HUNGRY/assets/index-CqgUPhlC.js"></script>
-  <link rel="stylesheet" crossorigin href="/AR-U-HUNGRY/assets/index-bsht6M25.css">
+  <script type="module" crossorigin src="/AR-U-HUNGRY/assets/index-CsoN2x0U.js"></script>
+  <link rel="stylesheet" crossorigin href="/AR-U-HUNGRY/assets/index-C5vtdzkz.css">
 </head>
 <body data-view="ar-product">
 <div class="ar-product-container">
@@ -30,6 +30,18 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
         <span>VEDI IN AR</span>
     </button>
+
+    <!-- AR Permission/Launcher Popup -->
+    <div id="ar-launcher" class="ar-launcher">
+        <div class="ar-launcher-content">
+            <div class="ar-launcher-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3>Permesso Camera</h3>
+            <p>Per visualizzare il piatto nel tuo ambiente reale, abbiamo bisogno del permesso per usare la tua fotocamera.</p>
+            <button id="enter-ar-btn">CONSENTI E INIZIA</button>
+        </div>
+    </div>
 
     <!-- AR Product Overlay -->
     <div class="ar-overlay">
