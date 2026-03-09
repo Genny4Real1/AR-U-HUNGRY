@@ -11,6 +11,7 @@
   <link rel="stylesheet" crossorigin href="/AR-U-HUNGRY/assets/index-BS50EXCC.css">
 </head>
 <body data-view="ar-product">
+<div class="ar-product-container">
 <model-viewer
     src="assets/resized_margherita_pizza.glb"
     loading="eager"
@@ -20,9 +21,11 @@
     camera-controls
     touch-action="pan-y"
     alt="3D model of a pizza"
+    ar-modes="webxr scene-viewer quick-look"
     style="background-color: unset;"
     xr-environment
 ></model-viewer>
+</div>
 
 <!-- AR Product Overlay -->
 <div class="ar-overlay">
